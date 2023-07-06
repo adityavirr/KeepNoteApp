@@ -1,0 +1,31 @@
+<!-- <div id="header">
+    <h3>{{headerTitle}}</h3>
+</div> -->
+
+<mat-toolbar color="primary">
+    <!-- <button mat-icon-button>
+     <mat-icon>menu</mat-icon>
+   </button> -->
+   <div color="primary" id="header">
+    <div id="title-block">
+        <h1>{{headerTitle}}</h1>
+    </div>
+    <div id="navbar">
+        <a> <button mat-icon-button routerLink="/">
+            <mat-icon>home</mat-icon>
+          </button></a>
+          <button mat-icon-button>
+           <mat-icon>list</mat-icon>
+         </button>
+          <button mat-icon-button>
+           <mat-icon>settings</mat-icon>
+         </button>
+         <a><button mat-icon-button routerLink="/register-user">
+          <mat-icon>person add</mat-icon>
+        </button></a> 
+        <button mat-icon-button *ngIf="loggedIn===true">
+          <mat-icon *ngIf="loggedIn===true" matTooltip="logout" (click)="logout()">logout</mat-icon>
+         </button>
+    </div>
+  </div>
+ </mat-toolbar>

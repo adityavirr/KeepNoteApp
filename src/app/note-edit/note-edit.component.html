@@ -1,0 +1,25 @@
+<div class="d-flex align-self-center" id="editnotebox">
+<form id="editForm">
+    <mat-card>
+    <h4 class="text-center">Edit Note</h4>
+    <mat-form-field>
+    <mat-label>Enter Note Title</mat-label>
+    <input matInput name="title" #title="ngModel" required [(ngModel)]="note.title">
+    <mat-error *ngIf="title.errors?.['required']">
+      Note title is required
+   </mat-error>
+  </mat-form-field>
+  <br/>
+  <mat-form-field>
+    <mat-label>Enter Content</mat-label>
+    <textarea matInput name="content" #content="ngModel" required minlength="5" [(ngModel)]="note.content" cols="30" rows="5"></textarea>
+    <mat-error *ngIf="content.errors?.['required']">
+      Note content is required
+   </mat-error>
+      <mat-error *ngIf="content.errors?.['minlength']">
+      minimum 5 characters
+     </mat-error>
+  </mat-form-field><br>
+  <br>
+  <button mat-raised-button color="primary" id="savebutton" (click)="editNote()">Save</button>
+</mat-card></form></div>

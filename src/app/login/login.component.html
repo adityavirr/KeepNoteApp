@@ -1,0 +1,13 @@
+<div id="login-form">
+    <h3>You need to first login to manage notes</h3>
+    <mat-form-field appearance="legacy">
+        <mat-label>Enter Email</mat-label>
+        <input matInput type="email" name="login_email" [(ngModel)]="login_email" placeholder="Enter Email">
+    </mat-form-field><br>
+    <mat-form-field appearance="legacy">
+        <mat-label>Enter Password</mat-label>
+        <input matInput type="password" name="login_password" [(ngModel)]="login_password" placeholder="Enter Password">
+    </mat-form-field><br>
+    <button mat-raised-button color="primary" (click)="validateLogin()">Login</button>
+</div>
+

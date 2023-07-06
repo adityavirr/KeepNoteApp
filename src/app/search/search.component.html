@@ -1,0 +1,12 @@
+<!-- <input class="my-1" type="search" placeholder="Search Note" style="width: 250px;" [(ngModel)]="searchText">
+<button (click) = "searchNote()" type = button style="margin-left: 5px;"  >Search</button> -->
+
+<!-- Newly Added Code below-->
+
+<mat-form-field id="search" appearance="outline">
+    <mat-label>Search Note</mat-label>
+    <input matInput type="search" placeholder="Search Note" [(ngModel)]="searchText">
+</mat-form-field>
+<button mat-icon-button (click) = "searchNote()" style="margin-left: 20px;">
+    <mat-icon>search</mat-icon>
+</button>

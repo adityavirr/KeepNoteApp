@@ -1,0 +1,15 @@
+.card-container{
+    width: 180px;
+    height: fit-content;
+    box-shadow: 5px 5px rgb(166, 215, 255);
+    margin-top: 10px;
+}
+
+.icons{
+    display: none;
+}
+
+.card-container:hover .icons{
+    display: flex;
+    justify-content: space-between;
+}

@@ -1,0 +1,98 @@
+<!-- <app-header></app-header> -->
+
+<form [formGroup]= "registerForm" (ngSubmit)="onSubmit();resetform(registerForm)">    
+    <h2 style="margin-left: 20px; color: blue;">Registration Form</h2>
+   
+    <mat-form-field>
+        <input matInput type="text" placeholder="First Name" id="firstName" formControlName="firstName">
+        <mat-error *ngIf="firstName?.errors?.['required']" >
+            First Name is required
+        </mat-error>
+        <mat-error *ngIf="firstName?.errors?.['minlength']" >
+            Minimum 2 characters required
+        </mat-error>
+    </mat-form-field>
+    
+    <mat-form-field>
+        <input matInput type="text" placeholder="Last Name" id="lastName" formControlName="lastName">
+    </mat-form-field><br>
+
+    <mat-form-field>
+        <input matInput type="text" placeholder="Email" id="email" formControlName="email">
+        <mat-error *ngIf="email?.errors?.['required']" >
+            Email is required
+        </mat-error>
+        <mat-error *ngIf="email?.errors?.['pattern']" >
+            Enter valid email address
+        </mat-error>
+    </mat-form-field>
+    <br>
+
+    <mat-form-field>
+        <input matInput type="password" placeholder="Password" id="password" formControlName="password">
+        <mat-error *ngIf="password?.errors?.['required']">
+            Password is required.
+        </mat-error>
+        <mat-error *ngIf="password?.errors?.['pattern']">
+            Password should have min 8 letter password, with at least a symbol, upper and lower case letters
+            and a number.
+        </mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+        <input matInput type="password" placeholder="Confirm Password" id="confirmPassword" formControlName="confirmPassword">
+        <mat-error *ngIf="confirmPassword?.errors?.['required']">
+            Confirm Password is required.
+        </mat-error>
+        <mat-error *ngIf="confirmPassword?.errors?.['passwordMismatch']">
+            Password and Confirm Password should match
+        </mat-error>
+    </mat-form-field>
+    <br>
+
+    <label style="margin-left: 30px;">Gender</label>
+    <mat-radio-group aria-label="Select Gender" class="radio-group" formControlName="gender" id="gender">
+        <mat-radio-button class="radio-button" [checked]="true" value="male">Male</mat-radio-button>
+        <mat-radio-button value="female">Female</mat-radio-button>
+        <mat-radio-button value="others">Others</mat-radio-button>
+    </mat-radio-group>
+    <br>
+
+    <mat-form-field>
+        <input type="number" matInput placeholder="Age" id="age" formControlName="age">
+        <mat-error *ngIf="age?.errors?.['invalidAge']===true">
+            Age must be 18 years and above
+        </mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+        <input matInput type="text" placeholder="Phone Number" id="phone" formControlName="phone">
+        <mat-error *ngIf="phone?.errors?.['pattern']">
+            Valid phone number contains 10 digits starting with 7/8/9
+        </mat-error>
+    </mat-form-field>
+    <br>
+
+    <div formGroupName="address">
+        <h4 style="margin-left: 30px;">Address</h4>
+        <mat-form-field>
+            <input matInput type="text" placeholder="Street" id="street" formControlName="street">
+        </mat-form-field>
+        <br>
+        <mat-form-field>
+            <input matInput type="text" placeholder="City" id="city" formControlName="city">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput type="text" placeholder="State" id="state" formControlName="state">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput type="text" placeholder="Zip Code" id="zipCode" formControlName="zipCode">
+            <mat-error *ngIf="zipCode?.errors?.['pattern']">
+                Zip code should be 5-digit or 6-digit number
+            </mat-error>
+        </mat-form-field>
+    </div>
+    <button color="accent" mat-button mat-raised-button type="reset">Reset</button>
+    <button color="primary" mat-button mat-raised-button [disabled]="!registerForm.valid" type="submit">Submit</button>
+
+

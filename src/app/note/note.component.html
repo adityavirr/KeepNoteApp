@@ -1,0 +1,26 @@
+<div class="card-container">
+    <mat-card class="text-center px-2 pt-4" matRipple [matRippleCentered]="true">
+    <button *ngIf="note?.priority==='Critical'" color="accent" mat-icon-button>
+    <mat-icon>gpp_maybe</mat-icon>
+    </button>
+    <button *ngIf="note?.priority==='High'" color="primary" mat-icon-button>
+    <mat-icon>arrow_circle_up</mat-icon>
+    </button>
+    <button *ngIf="note?.priority==='Medium'" color="primary" mat-icon-button>
+    <mat-icon>remove_circle_outline</mat-icon>
+    </button>
+    <button *ngIf="note?.priority==='Low'" color="primary" mat-icon-button>
+    <mat-icon>arrow_circle_down</mat-icon>
+    </button>
+    <p class="note-title fw-bold">{{note?.title}}</p>
+    <p class="note-content pt-3">{{note?.reminderDate}}</p>
+    <p class="note-content pt-3">{{note?.content}}</p>
+    <mat-chip color="primary">{{note?.category}}</mat-chip>
+    <div class="icons">
+        <button mat-icon-button color="accent"><mat-icon>comment</mat-icon></button>
+       <a routerLink="/notes/{{note?.id}}"><button mat-icon-button color="accent"><mat-icon>edit</mat-icon></button></a>
+        <button mat-icon-button color="accent" (click)="delete()"><mat-icon>delete</mat-icon></button>
+        <button mat-icon-button color="warn"><mat-icon>notifications</mat-icon></button>
+    </div>
+</mat-card>
+</div>

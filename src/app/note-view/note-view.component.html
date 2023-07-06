@@ -1,0 +1,9 @@
+<div class="d-flex align-self-center" id="searchbox">
+    <app-search  (noteSearched)="onNoteSearched($event)"></app-search>
+</div>
+<div class="d-flex align-self-center" id="addnotebox">
+    <app-note-add (noteAdded) = "onNoteAdded($event)"></app-note-add>
+</div>
+<div class="card-container">
+    <app-note *ngFor="let note of notes" [note] = "note" (noteDeleted) = "onNoteDeleted()"></app-note>
+</div>

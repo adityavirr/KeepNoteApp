@@ -1,0 +1,31 @@
+/* input{
+    border: 0px; border-bottom: 1px solid black;
+} */
+
+/* textarea{
+    border: 0px; border-bottom: 1px solid black;margin-top: 5px;
+} */
+
+#note-add{
+    box-shadow: 5px 5px 5px rgb(166, 215, 255);
+    width: 500px;
+}
+
+#addFormButton{
+    position: absolute;
+    right: 50px;
+    bottom: 50px;
+    z-index: 1;
+}
+
+mat-form-field{
+    width: 400px;
+}
+
+mat-radio-button{
+    margin-left: 15px;
+}
+
+#savebutton{
+    margin-top: 10px;
+}
