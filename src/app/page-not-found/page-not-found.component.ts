@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { RouterService } from '../services/router.service';
+import { NoteService } from '../services/note.service';
 
 @Component({
   selector: 'app-page-not-found',
@@ -7,9 +9,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PageNotFoundComponent implements OnInit {
 
-  constructor() { }
+  constructor(private routerService: RouterService) { }
 
   ngOnInit(): void {
+  }
+
+  toNotesView(){
+    this.routerService.navigateToNotesView()    
   }
 
 }
