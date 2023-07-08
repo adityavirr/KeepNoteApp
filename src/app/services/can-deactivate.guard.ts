@@ -6,7 +6,7 @@ import { NoteEditComponent } from '../note-edit/note-edit.component';
 @Injectable({
   providedIn: 'root'
 })
-export class CanDeactivateGuard implements CanDeactivate<unknown> {
+export class CanDeactivateGuard implements CanDeactivate<NoteEditComponent> {
   canDeactivate(
     component: NoteEditComponent,
     currentRoute: ActivatedRouteSnapshot,

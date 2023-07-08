@@ -3,6 +3,8 @@ import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { Observable } from 'rxjs';
 import { map, shareReplay } from 'rxjs/operators';
 import { LoginComponent } from '../login/login.component';
+import { RegisterFormComponent } from '../register-form/register-form.component';
+
 
 @Component({
   selector: 'app-navbar',
@@ -22,6 +24,6 @@ export class NavbarComponent {
   isLoggedIn: boolean = false;
 
   onLoggedIn($event: any){
-    this.isLoggedIn = !($event instanceof LoginComponent);
+    this.isLoggedIn = !($event instanceof LoginComponent || $event instanceof RegisterFormComponent);
   }
 }

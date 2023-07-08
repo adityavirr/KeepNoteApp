@@ -10,9 +10,9 @@ export class AuthService {
   isUserLoggedIn: boolean = false;
 
         login(email: string, password: string) {
-          if(email === "niit@stackroute.in" || "abc@email.com" && password ==="StackRoute@2023" || "password123"){
-            this.isUserLoggedIn = true;
-          }
+          
+            this.isUserLoggedIn = (email === "niit@stackroute.in" && password ==="StackRoute@2023") 
+                                || (email === "" && password ==="");
         }
 
         logout() {
